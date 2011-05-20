@@ -6,7 +6,7 @@ THE AUTHENTICATOR DOES NOT CARE LETTER BEFORE AUTH. THE AUTHENTICATOR PROVIDE GO
 What is this?
 -------------
 
-This is a proof of concept OAuth desktop client for Twitter that implements a login flow that mimics xAuth (Username + Password).
+This is a proof of concept Objective-C OAuth desktop client for Twitter that implements a login flow that mimics xAuth (Username + Password).
 
 Why?
 ----
