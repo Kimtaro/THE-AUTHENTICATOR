@@ -20,6 +20,8 @@
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet WebView *webView;
-@property (assign) IBOutlet NSTextField *preparingTextField;
+@property (assign) IBOutlet NSTextField *statusTextField;
+
+@property (retain) OAToken *requestToken;
 
 @end
