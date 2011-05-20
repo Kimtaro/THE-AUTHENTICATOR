@@ -27,6 +27,12 @@ Practical?
 
 It's a giant hack, and probably violates some Term of Service clause. But it works.
 
+Caveats
+------
+
+- Needs more native styling
+- Needs a few seconds to download the auth dialog before it can be shown. This can be remedied with some clever UX. 
+
 License
 -------
 
