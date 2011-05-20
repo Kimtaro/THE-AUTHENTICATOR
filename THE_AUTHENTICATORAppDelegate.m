@@ -70,12 +70,13 @@
 		// Restyle the dialog
 		[webView stringByEvaluatingJavaScriptFromString:@"\
 		  document.getElementsByTagName('style')[0].innerHTML = '\
-		    h2, #top-bar, .app-info, .permissions, .footer { display:none; }\
+		    h2, #top-bar, .app-info, .permissions, .footer, #deny { display: none; }\
 		    body { background-image: none; background-color: #EDEDED; }\
 		    #bd { border-width: 0; }\
 		    .auth { border-width: 0; margin: 0; padding: 0; width: 100%; }\
-		    input { border: none !important; }\
 		    label { font-family: Lucida Grande; font-weight: normal !important; }\
+			input { font-family: Lucida Grande; }\
+		    #allow { float: right; margin-right: 40px; }\
 		  '\
 		 "];
 		
@@ -133,7 +134,7 @@
 													   encoding:NSUTF8StringEncoding];
 		
 		OAToken *accessToken = [[OAToken alloc] initWithHTTPResponseBody:responseBody];
-		[statusTextField setStringValue:[NSString stringWithFormat:@"Access token: %@", accessToken.key]];
+		[statusTextField setStringValue:[NSString stringWithFormat:@"Token: %@", accessToken.key]];
 	}
 }
 
