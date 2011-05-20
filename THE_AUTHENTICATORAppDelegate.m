@@ -63,21 +63,31 @@
 	NSLog(@"ERRAR: %@", error);
 }
 
-- (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
-	// Restyle
-	[webView stringByEvaluatingJavaScriptFromString:@"\
-	  document.getElementsByTagName('style')[0].innerHTML = '\
-		h2, #top-bar, .app-info, .permissions, .footer { display:none; }\
-		body { background-image: none; background-color: #EDEDED; }\
-		#bd { border-width: 0; }\
-	    .auth { border-width: 0; margin: 0; padding: 0; width: 100%; }\
-	  '\
-	"];
-	
-	// Draw it
-	[webView setHidden:NO];
-	[preparingTextField setHidden:YES];
-
+- (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {	
+	if ( [[webView mainFrameURL] rangeOfString:@"oauth_token"].location != NSNotFound ) {
+		// Loaded the login dialog
+		// Restyle the dialog
+		[webView stringByEvaluatingJavaScriptFromString:@"\
+		  document.getElementsByTagName('style')[0].innerHTML = '\
+		    h2, #top-bar, .app-info, .permissions, .footer { display:none; }\
+		    body { background-image: none; background-color: #EDEDED; }\
+		    #bd { border-width: 0; }\
+		    .auth { border-width: 0; margin: 0; padding: 0; width: 100%; }\
+		    input { border: none !important; }\
+		    label { font-family: Lucida Grande; font-weight: normal !important; }\
+		  '\
+		 "];
+		
+		// Draw it
+		[webView setHidden:NO];
+		[preparingTextField setHidden:YES];		
+	}
+	else {
+		// Loaded the PIN
+		//NSLog(@"SOURCE: %@", [[[[webView mainFrame] dataSource] representation] documentSource]);
+		NSString *pin = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('code')[0].innerHTML"];
+		NSLog(@"PIN: %@", pin);
+	}
 }
 
 @end
