@@ -20,6 +20,8 @@ How?
 
 The client embeds a WebKit view to do the authentication, but restyles Twitter's normal authentication dialog to look more like a native OS X window.
 
+Once the user has logged in it uses Javascript to extract the verification PIN to retrieve the access token. 
+
 Practical?
 ----------
 
