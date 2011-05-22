@@ -22,6 +22,11 @@ The client embeds a WebKit view to do the authentication, but restyles Twitter's
 
 Once the user has logged in it uses Javascript to extract the verification PIN to retrieve the access token. 
 
+<img src="https://github.com/Kimtaro/THE-AUTHENTICATOR/raw/master/screenshots/Step%201.png" />
+<img src="https://github.com/Kimtaro/THE-AUTHENTICATOR/raw/master/screenshots/Step%202.png" />
+<img src="https://github.com/Kimtaro/THE-AUTHENTICATOR/raw/master/screenshots/Step%203.png" />
+<img src="https://github.com/Kimtaro/THE-AUTHENTICATOR/raw/master/screenshots/Step%204.png" />
+
 Practical?
 ----------
 
