@@ -20,10 +20,18 @@ How?
 
 The client embeds a WebKit view to do the authentication, but restyles Twitter's normal authentication dialog to look more like a native OS X window.
 
+Once the user has logged in it uses Javascript to extract the verification PIN to retrieve the access token. 
+
 Practical?
 ----------
 
 It's a giant hack, and probably violates some Term of Service clause. But it works.
+
+Caveats
+------
+
+- Needs more native styling
+- Needs a few seconds to download the auth dialog before it can be shown. This can be remedied with some clever UX. 
 
 License
 -------
