@@ -11,7 +11,7 @@ This is a proof of concept Objective-C OAuth desktop client for Twitter that imp
 Why?
 ----
 
-Because there's been hubbubb over the bad user experience associated with OAuth. This recurfaced recently when Twitter decided that all API clients except their own must use OAuth for authentication.
+Because there's been hubbubb over the bad user experience associated with OAuth. This resurfaced recently when Twitter decided that all API clients except their own must use OAuth for authentication.
 
 [http://daringfireball.net/2011/05/twitter_shit_sandwich](http://daringfireball.net/2011/05/twitter_shit_sandwich)
 
@@ -20,7 +20,7 @@ How?
 
 The client embeds a WebKit view to do the authentication, but restyles Twitter's normal authentication dialog to look more like a native OS X window.
 
-Once the user has logged in it uses Javascript to extract the verification PIN to retrieve the access token. 
+Once the user has logged in it hides the WebKit view, and in the background uses Javascript to extract the verification PIN to retrieve the access token. 
 
 <img src="https://github.com/Kimtaro/THE-AUTHENTICATOR/raw/master/screenshots/Step%201.png" />
 <img src="https://github.com/Kimtaro/THE-AUTHENTICATOR/raw/master/screenshots/Step%202.png" />
